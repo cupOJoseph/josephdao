@@ -1,0 +1,16 @@
+[
+  {"type":"event","name":"ProposalSubmitted","inputs":[{"name":"proposalID","type":"uint256","indexed":false},{"name":"description","type":"string","indexed":false},{"name":"sendTokenAddress","type":"address","indexed":false},{"name":"receiverAddress","type":"address","indexed":false},{"name":"sendTokenAmount","type":"uint256","indexed":false},{"name":"endTime","type":"uint256","indexed":false}]},
+  {"type":"event","name":"VoteOnProposal","inputs":[{"name":"proposalID","type":"uint256","indexed":false},{"name":"vote","type":"bool","indexed":false}]},
+  {"type":"event","name":"ProposalExecuted","inputs":[{"name":"proposalID","type":"uint256","indexed":false}]},
+  {"type":"function","name":"voteToken","stateMutability":"view","inputs":[],"outputs":[{"type":"address"}]},
+  {"type":"function","name":"proposalCount","stateMutability":"view","inputs":[],"outputs":[{"type":"uint256"}]},
+  {"type":"function","name":"proposals","stateMutability":"view","inputs":[{"name":"id","type":"uint256"}],"outputs":[{"name":"description","type":"string"},{"name":"sendTokenAddress","type":"address"},{"name":"receiverAddress","type":"address"},{"name":"sendTokenAmount","type":"uint256"},{"name":"endTime","type":"uint256"}]},
+  {"type":"function","name":"yesVotes","stateMutability":"view","inputs":[{"name":"id","type":"uint256"}],"outputs":[{"type":"uint256"}]},
+  {"type":"function","name":"noVotes","stateMutability":"view","inputs":[{"name":"id","type":"uint256"}],"outputs":[{"type":"uint256"}]},
+  {"type":"function","name":"isExecuted","stateMutability":"view","inputs":[{"name":"id","type":"uint256"}],"outputs":[{"type":"bool"}]},
+  {"type":"function","name":"userHasVoted","stateMutability":"view","inputs":[{"name":"id","type":"uint256"},{"name":"user","type":"address"}],"outputs":[{"type":"bool"}]},
+  {"type":"function","name":"minimumQuorum","stateMutability":"view","inputs":[],"outputs":[{"type":"uint256"}]},
+  {"type":"function","name":"submitProposal","stateMutability":"nonpayable","inputs":[{"name":"description","type":"string"},{"name":"sendTokenAddress","type":"address"},{"name":"receiverAddress","type":"address"},{"name":"sendTokenAmount","type":"uint256"}],"outputs":[]},
+  {"type":"function","name":"voteOnProposal","stateMutability":"nonpayable","inputs":[{"name":"proposalID","type":"uint256"},{"name":"vote","type":"bool"}],"outputs":[]},
+  {"type":"function","name":"executeProposal","stateMutability":"nonpayable","inputs":[{"name":"proposalID","type":"uint256"}],"outputs":[]}
+]

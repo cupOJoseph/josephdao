@@ -1,0 +1,24 @@
+type Proposal @entity {
+  id: ID!
+  proposalID: BigInt!
+  description: String!
+  sendTokenAddress: Bytes!
+  receiverAddress: Bytes!
+  sendTokenAmount: BigInt!
+  endTime: BigInt!
+  yesVotes: BigInt!
+  noVotes: BigInt!
+  executed: Boolean!
+  votes: [Vote!]! @derivedFrom(field: "proposal")
+  createdAt: BigInt!
+  createdTx: Bytes!
+}
+
+type Vote @entity {
+  id: ID!
+  proposal: Proposal!
+  voter: Bytes!
+  support: Boolean!
+  timestamp: BigInt!
+  tx: Bytes!
+}

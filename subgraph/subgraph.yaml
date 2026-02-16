@@ -1,0 +1,29 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: JosephDAO
+    network: arbitrum-one
+    source:
+      address: "0x28DD040160484e194A7551d98af7Acec631ee2d4"
+      abi: JosephDAO
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Proposal
+        - Vote
+      abis:
+        - name: JosephDAO
+          file: ./abis/JosephDAO.json
+      eventHandlers:
+        - event: ProposalSubmitted(uint256,string,address,address,uint256,uint256)
+          handler: handleProposalSubmitted
+        - event: VoteOnProposal(uint256,bool)
+          handler: handleVoteOnProposal
+        - event: ProposalExecuted(uint256)
+          handler: handleProposalExecuted
+      file: ./src/mapping.ts
