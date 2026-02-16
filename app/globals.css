@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --lavender: #c4b5fd;
+  --mint: #a7f3d0;
+  --peach: #fecaca;
+  --pink: #fbcfe8;
+  --sky: #bae6fd;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0f2fe 50%, #fce7f3 100%);
+  min-height: 100vh;
+}
+
+[data-rk] {
+  --rk-radii-connectButton: 9999px;
+}
